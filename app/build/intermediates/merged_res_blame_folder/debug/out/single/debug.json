@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_fade_in.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\drawable_ic_versu_logo.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\drawable\\ic_versu_logo.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\drawable_ic_favorite_border.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\drawable\\ic_favorite_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_pulse.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\pulse.xml"
+    },
+    {
+        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/drawable_ic_ornament.xml.flat",
+        "source": "com.joaovictorsilvestre.versu.app-main-38:/drawable/ic_ornament.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\font_cinzel_bold.ttf.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\font\\cinzel_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\color_chip_text_selector.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\color\\chip_text_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_fade_out.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/drawable_ic_versu_logo.xml.flat",
+        "source": "com.joaovictorsilvestre.versu.app-main-38:/drawable/ic_versu_logo.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_flip_card_out.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\flip_card_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_flip_card_in.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\flip_card_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\drawable_ic_favorite_filled.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\drawable\\ic_favorite_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\font_cinzel.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\font\\cinzel.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\drawable_ic_ornament.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\drawable\\ic_ornament.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_slide_up.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\slide_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-merged_res-36:\\color_chip_background_selector.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.5\\com.joaovictorsilvestre.versu.app-main-38:\\color\\chip_background_selector.xml"
+    }
+]

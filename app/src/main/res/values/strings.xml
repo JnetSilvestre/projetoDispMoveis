@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VersU</string>
+    <string name="slogan">Sua caixinha de promessas digital</string>
+    <string name="btn_sortear">Sortear Versículo</string>
+    <string name="tv_instrucao">Toque em sortear para receber uma palavra</string>
+    <string name="placeholder_card">Toque em Sortear Versículo\npara receber uma\npromessa bíblica</string>
+    <string name="todas_categorias">Todas</string>
+    <string name="versiculos_disponiveis">150 versículos disponíveis</string>
+    <string name="favoritar">Favoritar versículo</string>
+    <string name="desfavoritar">Remover dos favoritos</string>
+    <string name="erro_banco_vazio">Nenhum versículo encontrado nesta categoria.</string>
+</resources>

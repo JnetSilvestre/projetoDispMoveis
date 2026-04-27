@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_primary">#0D1A35</color>
+    <color name="black">#FF000000</color>
+    <color name="card_background">#162040</color>
+    <color name="chip_selected_bg">#F5C842</color>
+    <color name="chip_selected_text">#0F1E3C</color>
+    <color name="chip_unselected_bg">#1A2F5E</color>
+    <color name="chip_unselected_text">#8899BB</color>
+    <color name="gold_accent">#FFD96A</color>
+    <color name="gold_dark">#B8860B</color>
+    <color name="gold_light">#F5C842</color>
+    <color name="gold_light_alpha">#33F5C842</color>
+    <color name="navy_dark">#0F1E3C</color>
+    <color name="navy_darkest">#0B1426</color>
+    <color name="navy_light">#2E4A8A</color>
+    <color name="navy_mid">#1A2F5E</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="splash_background">#0B1426</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="text_placeholder">#4A5C80</color>
+    <color name="text_primary">#EEF2FF</color>
+    <color name="text_secondary">#8899BB</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+    <color name="white_alpha_70">#B3FFFFFF</color>
+    <string name="app_name">VersU</string>
+    <string name="btn_sortear">Sortear Versículo</string>
+    <string name="desfavoritar">Remover dos favoritos</string>
+    <string name="erro_banco_vazio">Nenhum versículo encontrado nesta categoria.</string>
+    <string name="favoritar">Favoritar versículo</string>
+    <string name="placeholder_card">Toque em Sortear Versículo\npara receber uma\npromessa bíblica</string>
+    <string name="slogan">Sua caixinha de promessas digital</string>
+    <string name="todas_categorias">Todas</string>
+    <string name="tv_instrucao">Toque em sortear para receber uma palavra</string>
+    <string name="versiculos_disponiveis">150 versículos disponíveis</string>
+    <style name="TextAppearance.VersU.Toolbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/gold_light</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <style name="Theme.VersU" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/navy_dark</item>
+        <item name="colorPrimaryVariant">@color/navy_mid</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorSecondary">@color/gold_light</item>
+        <item name="colorSecondaryVariant">@color/gold_dark</item>
+        <item name="colorOnSecondary">@color/navy_dark</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/navy_darkest</item>
+        <item name="android:navigationBarColor">@color/navy_dark</item>
+    </style>
+    <style name="Theme.VersU.Splash" parent="Theme.VersU">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/splash_background</item>
+    </style>
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splash_background">
+
+    <!-- Ícone / Logo -->
+    <ImageView
+        android:id="@+id/img_logo_splash"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_versu_logo"
+        android:contentDescription="Logo VersU"
+        app:layout_constraintBottom_toTopOf="@id/tv_app_name_splash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Nome do App -->
+    <TextView
+        android:id="@+id/tv_app_name_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VersU"
+        android:fontFamily="@font/cinzel_bold"
+        android:textSize="52sp"
+        android:textColor="@color/gold_light"
+        android:letterSpacing="0.12"
+        app:layout_constraintBottom_toTopOf="@id/tv_slogan_splash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_logo_splash"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Slogan -->
+    <TextView
+        android:id="@+id/tv_slogan_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sua caixinha de promessas digital"
+        android:textSize="14sp"
+        android:textColor="@color/white_alpha_70"
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name_splash"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <!-- Rodapé -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UTFPR — Engenharia da Computação"
+        android:textSize="11sp"
+        android:textColor="@color/white_alpha_40"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

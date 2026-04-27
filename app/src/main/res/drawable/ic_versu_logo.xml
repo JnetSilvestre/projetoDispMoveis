@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Círculo de fundo suave -->
+    <path
+        android:pathData="M60,10 A50,50 0 1,1 59.99,10 Z"
+        android:fillColor="#1A2F5E"
+        android:strokeColor="#F5C842"
+        android:strokeWidth="2"/>
+
+    <!-- Livro - base esquerda -->
+    <path
+        android:pathData="M28,42 L28,82 Q28,85 31,85 L58,85 L58,38 Q58,35 55,35 L31,35 Q28,35 28,38 Z"
+        android:fillColor="#0F1E3C"
+        android:strokeColor="#F5C842"
+        android:strokeWidth="2"/>
+
+    <!-- Livro - base direita -->
+    <path
+        android:pathData="M92,42 L92,82 Q92,85 89,85 L62,85 L62,38 Q62,35 65,35 L89,35 Q92,35 92,38 Z"
+        android:fillColor="#162040"
+        android:strokeColor="#F5C842"
+        android:strokeWidth="2"/>
+
+    <!-- Lombada central -->
+    <path
+        android:pathData="M57,33 h6 v54 h-6 z"
+        android:fillColor="#F5C842"/>
+
+    <!-- Linhas do texto (esquerda) -->
+    <path
+        android:pathData="M34,50 L52,50"
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M34,57 L52,57"
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M34,64 L46,64"
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+
+    <!-- Linhas do texto (direita) -->
+    <path
+        android:pathData="M68,50 L86,50"
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M68,57 L86,57"
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M68,64 L80,64"
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+
+    <!-- Estrela dourada acima -->
+    <path
+        android:pathData="M60,18 L62.5,24 L69,24 L64,28 L66,34 L60,30.5 L54,34 L56,28 L51,24 L57.5,24 Z"
+        android:fillColor="#F5C842"/>
+
+</vector>
