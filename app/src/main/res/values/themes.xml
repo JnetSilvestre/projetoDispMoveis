@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Tema base do app -->
     <style name="Theme.VersU" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/navy_dark</item>
         <item name="colorPrimaryVariant">@color/navy_mid</item>
@@ -12,20 +11,11 @@
         <item name="android:windowBackground">@color/bg_primary</item>
         <item name="android:statusBarColor">@color/navy_darkest</item>
         <item name="android:navigationBarColor">@color/navy_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <!-- Tema da Splash Screen (sem animação de transição padrão) -->
     <style name="Theme.VersU.Splash" parent="Theme.VersU">
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@color/splash_background</item>
-    </style>
-
-    <!-- Estilo da Toolbar -->
-    <style name="TextAppearance.VersU.Toolbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textColor">@color/gold_light</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:letterSpacing">0.08</item>
     </style>
 
 </resources>

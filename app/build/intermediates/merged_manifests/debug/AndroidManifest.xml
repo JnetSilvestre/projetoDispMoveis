@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="26"
         android:targetSdkVersion="34" />
 
     <permission
@@ -25,21 +25,16 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.VersU" >
-
-        <!-- Splash Screen -->
         <activity
             android:name="com.joaovictorsilvestre.versu.ui.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.VersU.Splash" >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Main Activity -->
         <activity
             android:name="com.joaovictorsilvestre.versu.ui.main.MainActivity"
             android:exported="false"

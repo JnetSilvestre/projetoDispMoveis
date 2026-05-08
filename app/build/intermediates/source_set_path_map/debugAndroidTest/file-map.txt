@@ -1,0 +1,6 @@
+com.joaovictorsilvestre.versu.test.app-jetified-core-1.5.0-0 C:\Users\João Victor\.gradle\caches\transforms-3\2d79c89155f0598475d5869406aa988d\transformed\jetified-core-1.5.0\res
+com.joaovictorsilvestre.versu.test.app-jetified-annotation-experimental-1.3.0-1 C:\Users\João Victor\.gradle\caches\transforms-3\2d8a610719c086ad8d2a7b81fb08630a\transformed\jetified-annotation-experimental-1.3.0\res
+com.joaovictorsilvestre.versu.test.app-androidTest-2 D:\Documentos\UTFPR\2026.1\ProgramacaoDispositivosMoveis\projetoDispMoveis\app\build\generated\res\resValues\androidTest\debug
+com.joaovictorsilvestre.versu.test.app-mergeDebugAndroidTestResources-3 D:\Documentos\UTFPR\2026.1\ProgramacaoDispositivosMoveis\projetoDispMoveis\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.joaovictorsilvestre.versu.test.app-mergeDebugAndroidTestResources-4 D:\Documentos\UTFPR\2026.1\ProgramacaoDispositivosMoveis\projetoDispMoveis\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.joaovictorsilvestre.versu.test.app-merged_res-5 D:\Documentos\UTFPR\2026.1\ProgramacaoDispositivosMoveis\projetoDispMoveis\app\build\intermediates\merged_res\debugAndroidTest

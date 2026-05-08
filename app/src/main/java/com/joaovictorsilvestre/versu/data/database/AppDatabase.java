@@ -15,9 +15,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Classe principal do banco de dados Room.
- * Declara as entidades e versão do esquema.
- * Implementa o padrão Singleton para garantir uma única instância em toda a aplicação.
+ * Banco de dados Room — padrão Singleton.
+ * Entidades: Versiculo (1) → Historico (N).
+ * Na primeira abertura, popula os 150 versículos automaticamente.
  */
 @Database(
     entities = {Versiculo.class, Historico.class},
@@ -26,52 +26,32 @@ import java.util.concurrent.Executors;
 )
 public abstract class AppDatabase extends RoomDatabase {
 
-    private static final String DATABASE_NAME = "versu_database";
+    private static final String DB_NAME = "versu_db";
     private static volatile AppDatabase INSTANCE;
 
-    /** Executor com uma thread dedicada para operações de escrita no banco. */
-    static final ExecutorService databaseWriteExecutor =
-            Executors.newSingleThreadExecutor();
-
-    // ── DAOs ─────────────────────────────────────────────────────────────
+    public static final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public abstract VersiculoDao versiculoDao();
     public abstract HistoricoDao historicoDao();
 
-    // ── Singleton ────────────────────────────────────────────────────────
-
-    /**
-     * Retorna a instância única do banco de dados.
-     * Na primeira chamada, cria o banco e popula os versículos iniciais.
-     */
-    public static AppDatabase getInstance(final Context context) {
+    public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(
                             context.getApplicationContext(),
                             AppDatabase.class,
-                            DATABASE_NAME
+                            DB_NAME
                     ).build();
-
-                    // Popula os versículos na primeira abertura do banco
-                    populateInitialData();
+                    // Popula na primeira vez
+                    executor.execute(() -> {
+                        if (INSTANCE.versiculoDao().contar() == 0) {
+                            INSTANCE.versiculoDao().inserirTodos(VersiculoData.getAllVersiculos());
+                        }
+                    });
                 }
             }
         }
         return INSTANCE;
-    }
-
-    /**
-     * Verifica se o banco está vazio e, em caso positivo, insere os versículos iniciais.
-     * Executa em thread de background para não bloquear a UI.
-     */
-    private static void populateInitialData() {
-        databaseWriteExecutor.execute(() -> {
-            VersiculoDao dao = INSTANCE.versiculoDao();
-            if (dao.contar() == 0) {
-                dao.inserirTodos(VersiculoData.getAllVersiculos());
-            }
-        });
     }
 }

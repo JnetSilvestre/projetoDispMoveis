@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/bg_primary">
 
-    <!-- AppBar com título -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -19,214 +18,190 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="VersU"
-            app:titleTextAppearance="@style/TextAppearance.VersU.Toolbar"
+            app:titleTextColor="@color/gold_light"
             app:contentInsetStart="20dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Conteúdo principal com scroll -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingHorizontal="20dp"
-            android:paddingTop="24dp"
+            android:paddingTop="20dp"
             android:paddingBottom="32dp">
 
-            <!-- Subtítulo / instrução -->
+            <!-- Instrução -->
             <TextView
                 android:id="@+id/tv_instrucao"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Toque em sortear para receber uma palavra"
+                android:text="Filtre por categoria ou sorteie aleatoriamente"
                 android:textSize="13sp"
                 android:textColor="@color/text_secondary"
                 android:gravity="center"
-                android:letterSpacing="0.03"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:layout_marginBottom="14dp"/>
 
-            <!-- Chips de filtro por categoria -->
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chip_group_categorias"
-                android:layout_width="0dp"
+            <!-- Chips de categoria -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:singleSelection="true"
-                app:selectionRequired="true"
-                app:layout_constraintTop_toBottomOf="@id/tv_instrucao"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:scrollbars="none"
+                android:layout_marginBottom="22dp">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_categorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"/>
+
+            </HorizontalScrollView>
 
             <!-- Card do versículo -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_versiculo"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginBottom="28dp"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@color/card_background"
-                app:cardElevation="12dp"
-                app:layout_constraintTop_toBottomOf="@id/chip_group_categorias"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:cardElevation="14dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:padding="28dp">
 
-                    <!-- Ícone decorativo topo -->
-                    <ImageView
-                        android:id="@+id/iv_ornament_top"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/ic_ornament"
-                        android:alpha="0.35"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                    <!-- Linha superior: ornamento + botão favorito -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
 
-                    <!-- Botão favorito -->
-                    <ImageButton
-                        android:id="@+id/btn_favorito"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_favorite_border"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="Favoritar versículo"
-                        android:visibility="gone"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="✦"
+                            android:textSize="18sp"
+                            android:textColor="@color/gold_light"
+                            android:alpha="0.5"/>
 
-                    <!-- Texto placeholder (estado inicial) -->
+                        <ImageButton
+                            android:id="@+id/btn_favorito"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_favorite_border"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/favoritar"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+                    <!-- Placeholder (estado inicial) -->
                     <TextView
                         android:id="@+id/tv_placeholder"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="✦\n\nToque em Sortear Versículo\npara receber uma\npromessa bíblica"
+                        android:text="Toque em Sortear Versículo\npara receber uma promessa bíblica"
                         android:textSize="16sp"
                         android:textColor="@color/text_placeholder"
                         android:gravity="center"
-                        android:lineSpacingMultiplier="1.5"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        app:layout_constraintTop_toBottomOf="@id/iv_ornament_top"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:lineSpacingMultiplier="1.6"
+                        android:paddingVertical="24dp"/>
 
                     <!-- Texto do versículo -->
                     <TextView
                         android:id="@+id/tv_texto_versiculo"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textSize="18sp"
                         android:textColor="@color/text_primary"
-                        android:lineSpacingMultiplier="1.65"
+                        android:lineSpacingMultiplier="1.7"
                         android:gravity="center"
-                        android:fontFamily="sans-serif-light"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintTop_toBottomOf="@id/iv_ornament_top"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:visibility="gone"/>
 
                     <!-- Divisor dourado -->
                     <View
-                        android:id="@+id/divider_gold"
+                        android:id="@+id/view_divider"
                         android:layout_width="48dp"
                         android:layout_height="2dp"
+                        android:layout_gravity="center_horizontal"
                         android:background="@color/gold_light"
                         android:alpha="0.6"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/tv_texto_versiculo"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:layout_marginBottom="16dp"
+                        android:visibility="gone"/>
 
                     <!-- Referência bíblica -->
                     <TextView
-                        android:id="@+id/tv_referencia_versiculo"
-                        android:layout_width="0dp"
+                        android:id="@+id/tv_referencia"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textSize="15sp"
                         android:textColor="@color/gold_light"
                         android:gravity="center"
-                        android:fontFamily="sans-serif-medium"
-                        android:letterSpacing="0.05"
-                        android:layout_marginTop="16dp"
-                        app:layout_constraintTop_toBottomOf="@id/divider_gold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:textStyle="bold"
+                        android:letterSpacing="0.04"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone"/>
 
-                    <!-- Chip de categoria -->
+                    <!-- Chip de categoria do versículo -->
                     <com.google.android.material.chip.Chip
-                        android:id="@+id/tv_categoria_versiculo"
+                        android:id="@+id/chip_categoria_versiculo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:text=""
-                        android:textSize="12sp"
                         android:clickable="false"
+                        android:focusable="false"
                         app:chipBackgroundColor="@color/gold_light_alpha"
                         app:chipStrokeColor="@color/gold_light"
                         app:chipStrokeWidth="1dp"
-                        android:textColor="@color/gold_dark"
-                        android:layout_marginTop="12dp"
-                        app:layout_constraintTop_toBottomOf="@id/tv_referencia_versiculo"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:textColor="@color/gold_light"
+                        android:textSize="12sp"
+                        android:visibility="gone"/>
 
-                    <!-- Ícone ornamental rodapé -->
-                    <ImageView
-                        android:id="@+id/iv_ornament_bottom"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_ornament"
-                        android:alpha="0.20"
-                        android:rotation="180"
-                        android:layout_marginTop="16dp"
-                        app:layout_constraintTop_toBottomOf="@id/tv_categoria_versiculo"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Botão principal de sorteio -->
+            <!-- Botão sortear -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_sortear"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="✦  Sortear Versículo"
+                android:text="@string/btn_sortear"
                 android:textSize="17sp"
-                android:letterSpacing="0.04"
                 android:textColor="@color/navy_dark"
-                android:layout_marginTop="28dp"
+                android:letterSpacing="0.03"
                 app:backgroundTint="@color/gold_light"
                 app:cornerRadius="30dp"
-                app:elevation="6dp"
-                app:layout_constraintTop_toBottomOf="@id/card_versiculo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:elevation="6dp"/>
 
-            <!-- Contador (futuro uso) -->
+            <!-- Contador -->
             <TextView
                 android:id="@+id/tv_contador"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="150 versículos disponíveis"
+                android:text="@string/versiculos_count"
                 android:textSize="12sp"
                 android:textColor="@color/text_secondary"
-                android:layout_marginTop="12dp"
-                app:layout_constraintTop_toBottomOf="@id/btn_sortear"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:gravity="center"
+                android:layout_marginTop="12dp"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

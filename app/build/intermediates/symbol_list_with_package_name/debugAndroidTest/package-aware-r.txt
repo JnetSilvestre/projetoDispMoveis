@@ -1,0 +1,3 @@
+com.joaovictorsilvestre.versu.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

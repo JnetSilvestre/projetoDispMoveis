@@ -7,9 +7,7 @@ import com.joaovictorsilvestre.versu.data.entity.Historico;
 import com.joaovictorsilvestre.versu.data.entity.Versiculo;
 
 /**
- * POJO de relacionamento entre Historico e Versiculo.
- * Usado nas consultas Room com @Transaction para carregar o versículo completo
- * junto com cada entrada do histórico.
+ * POJO que combina Historico + Versiculo para consultas Room com @Transaction.
  */
 public class HistoricoComVersiculo {
 

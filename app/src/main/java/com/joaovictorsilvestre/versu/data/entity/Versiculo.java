@@ -5,8 +5,8 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 /**
- * Entidade que representa um versículo bíblico no banco de dados.
- * Relacionamento: Um Versiculo pode estar associado a vários registros de Historico (1:N).
+ * Entidade Room que representa um versículo bíblico.
+ * Relacionamento: 1 Versiculo → N Historico
  */
 @Entity(tableName = "versiculos")
 public class Versiculo {
@@ -34,8 +34,6 @@ public class Versiculo {
         this.categoria = categoria;
         this.favorito = false;
     }
-
-    // ── Getters e Setters ────────────────────────────────────────────────
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

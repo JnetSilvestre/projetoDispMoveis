@@ -1,42 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- ── Paleta principal: Azul Noite + Dourado Sagrado ── -->
     <color name="navy_darkest">#0B1426</color>
     <color name="navy_dark">#0F1E3C</color>
     <color name="navy_mid">#1A2F5E</color>
-    <color name="navy_light">#2E4A8A</color>
 
     <color name="gold_dark">#B8860B</color>
     <color name="gold_light">#F5C842</color>
-    <color name="gold_accent">#FFD96A</color>
     <color name="gold_light_alpha">#33F5C842</color>
 
-    <!-- ── Fundos ── -->
     <color name="bg_primary">#0D1A35</color>
     <color name="card_background">#162040</color>
-    <color name="splash_background">#0B1426</color>
 
-    <!-- ── Textos ── -->
     <color name="text_primary">#EEF2FF</color>
     <color name="text_secondary">#8899BB</color>
     <color name="text_placeholder">#4A5C80</color>
 
-    <!-- ── Transparências ── -->
     <color name="white_alpha_70">#B3FFFFFF</color>
     <color name="white_alpha_40">#66FFFFFF</color>
 
-    <!-- ── Chips ── -->
     <color name="chip_selected_bg">#F5C842</color>
     <color name="chip_unselected_bg">#1A2F5E</color>
     <color name="chip_selected_text">#0F1E3C</color>
     <color name="chip_unselected_text">#8899BB</color>
 
-    <!-- Cores exigidas pelo sistema Android -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!-- Requeridas pelo sistema -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

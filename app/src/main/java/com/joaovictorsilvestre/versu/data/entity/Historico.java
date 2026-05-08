@@ -7,9 +7,8 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 /**
- * Entidade que representa um registro no histórico de versículos sorteados.
- * Relacionamento: N:1 com Versiculo (muitos históricos para um versículo).
- * Chave estrangeira: versiculo_id → versiculos.id (CASCADE DELETE).
+ * Entidade Room que representa um registro no histórico de sorteios.
+ * Relacionamento: N Historico → 1 Versiculo (FK com CASCADE DELETE)
  */
 @Entity(
     tableName = "historico",
@@ -30,7 +29,6 @@ public class Historico {
     @ColumnInfo(name = "versiculo_id")
     private int versiculoId;
 
-    /** Timestamp Unix em milissegundos do momento do sorteio. */
     @ColumnInfo(name = "data_sorteio")
     private long dataSorteio;
 
@@ -40,8 +38,6 @@ public class Historico {
         this.versiculoId = versiculoId;
         this.dataSorteio = dataSorteio;
     }
-
-    // ── Getters e Setters ────────────────────────────────────────────────
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
