@@ -14,12 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.joaovictorsilvestre.versu.R;
 import com.joaovictorsilvestre.versu.ui.main.MainActivity;
 
-/**
- * Tela de splash — exibe logo e slogan por 2,5 s antes de abrir a MainActivity.
- */
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int SPLASH_DELAY = 2500;
+    private static final int DELAY = 2500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +30,14 @@ public class SplashActivity extends AppCompatActivity {
         Animation fadeIn  = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
 
-        logo.startAnimation(fadeIn);
-        nome.startAnimation(slideUp);
-        slogan.startAnimation(slideUp);
+        if (logo != null)   logo.startAnimation(fadeIn);
+        if (nome != null)   nome.startAnimation(slideUp);
+        if (slogan != null) slogan.startAnimation(slideUp);
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             startActivity(new Intent(this, MainActivity.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             finish();
-        }, SPLASH_DELAY);
+        }, DELAY);
     }
 }

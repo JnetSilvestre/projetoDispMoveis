@@ -4,10 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-/**
- * Entidade Room que representa um versículo bíblico.
- * Relacionamento: 1 Versiculo → N Historico
- */
+/** Entidade Room — versículo bíblico. Relacionamento: 1 Versiculo → N Historico */
 @Entity(tableName = "versiculos")
 public class Versiculo {
 
@@ -37,16 +34,12 @@ public class Versiculo {
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
-
     public String getTexto() { return texto; }
     public void setTexto(String texto) { this.texto = texto; }
-
     public String getReferencia() { return referencia; }
     public void setReferencia(String referencia) { this.referencia = referencia; }
-
     public String getCategoria() { return categoria; }
     public void setCategoria(String categoria) { this.categoria = categoria; }
-
     public boolean isFavorito() { return favorito; }
     public void setFavorito(boolean favorito) { this.favorito = favorito; }
 }

@@ -37,9 +37,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="32dp">
 
-            <!-- Instrução -->
             <TextView
-                android:id="@+id/tv_instrucao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Filtre por categoria ou sorteie aleatoriamente"
@@ -48,7 +46,7 @@
                 android:gravity="center"
                 android:layout_marginBottom="14dp"/>
 
-            <!-- Chips de categoria -->
+            <!-- Chips de filtro -->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,20 +78,20 @@
                     android:orientation="vertical"
                     android:padding="28dp">
 
-                    <!-- Linha superior: ornamento + botão favorito -->
+                    <!-- Cabeçalho do card: ornamento + btn favorito -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="16dp">
+                        android:layout_marginBottom="12dp">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="✦"
-                            android:textSize="18sp"
+                            android:textSize="20sp"
                             android:textColor="@color/gold_light"
                             android:alpha="0.5"/>
 
@@ -101,14 +99,14 @@
                             android:id="@+id/btn_favorito"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_favorite_border"
+                            android:src="@android:drawable/btn_star_big_off"
                             android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="@string/favoritar"
                             android:visibility="gone"/>
 
                     </LinearLayout>
 
-                    <!-- Placeholder (estado inicial) -->
+                    <!-- Placeholder inicial -->
                     <TextView
                         android:id="@+id/tv_placeholder"
                         android:layout_width="match_parent"
@@ -125,7 +123,6 @@
                         android:id="@+id/tv_texto_versiculo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
                         android:textSize="18sp"
                         android:textColor="@color/text_primary"
                         android:lineSpacingMultiplier="1.7"
@@ -149,7 +146,6 @@
                         android:id="@+id/tv_referencia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
                         android:textSize="15sp"
                         android:textColor="@color/gold_light"
                         android:gravity="center"
@@ -158,13 +154,12 @@
                         android:layout_marginBottom="12dp"
                         android:visibility="gone"/>
 
-                    <!-- Chip de categoria do versículo -->
+                    <!-- Chip de categoria do versículo sorteado -->
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_categoria_versiculo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text=""
                         android:clickable="false"
                         android:focusable="false"
                         app:chipBackgroundColor="@color/gold_light_alpha"
@@ -190,9 +185,7 @@
                 app:cornerRadius="30dp"
                 app:elevation="6dp"/>
 
-            <!-- Contador -->
             <TextView
-                android:id="@+id/tv_contador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/versiculos_count"

@@ -1,6 +1,10 @@
 package com.joaovictorsilvestre.versu.ui.main;
 
+import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -11,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.button.MaterialButton;
@@ -18,70 +23,55 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.joaovictorsilvestre.versu.R;
 import com.joaovictorsilvestre.versu.data.entity.Versiculo;
+import com.joaovictorsilvestre.versu.ui.favoritos.FavoritosActivity;
+import com.joaovictorsilvestre.versu.ui.historico.HistoricoActivity;
 
 import java.util.List;
 
-/**
- * Tela principal do VersU.
- * Responsabilidades: sortear versículo, filtrar por categoria, marcar favorito.
- */
 public class MainActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
 
-    // Views
-    private CardView    cardVersiculo;
-    private TextView    tvPlaceholder;
-    private TextView    tvTexto;
-    private View        viewDivider;
-    private TextView    tvReferencia;
-    private Chip        chipCategoriaVersiculo;
-    private ImageButton btnFavorito;
-    private ChipGroup   chipGroupCategorias;
+    private CardView       cardVersiculo;
+    private TextView       tvPlaceholder;
+    private TextView       tvTexto;
+    private View           viewDivider;
+    private TextView       tvReferencia;
+    private Chip           chipCat;
+    private ImageButton    btnFavorito;
+    private ChipGroup      chipGroup;
     private MaterialButton btnSortear;
 
-    // Animações
-    private Animation animFlipOut;
-    private Animation animFlipIn;
-    private Animation animPulse;
+    private Animation animFlipOut, animFlipIn, animPulse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setupToolbar();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         bindViews();
         loadAnimations();
         setupViewModel();
     }
 
-    // ── Setup ─────────────────────────────────────────────────────────────
-
-    private void setupToolbar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("VersU");
-        }
-    }
+    // ── Bind ─────────────────────────────────────────────────────────────
 
     private void bindViews() {
-        cardVersiculo          = findViewById(R.id.card_versiculo);
-        tvPlaceholder          = findViewById(R.id.tv_placeholder);
-        tvTexto                = findViewById(R.id.tv_texto_versiculo);
-        viewDivider            = findViewById(R.id.view_divider);
-        tvReferencia           = findViewById(R.id.tv_referencia);
-        chipCategoriaVersiculo = findViewById(R.id.chip_categoria_versiculo);
-        btnFavorito            = findViewById(R.id.btn_favorito);
-        chipGroupCategorias    = findViewById(R.id.chip_group_categorias);
-        btnSortear             = findViewById(R.id.btn_sortear);
+        cardVersiculo = findViewById(R.id.card_versiculo);
+        tvPlaceholder = findViewById(R.id.tv_placeholder);
+        tvTexto       = findViewById(R.id.tv_texto_versiculo);
+        viewDivider   = findViewById(R.id.view_divider);
+        tvReferencia  = findViewById(R.id.tv_referencia);
+        chipCat       = findViewById(R.id.chip_categoria_versiculo);
+        btnFavorito   = findViewById(R.id.btn_favorito);
+        chipGroup     = findViewById(R.id.chip_group_categorias);
+        btnSortear    = findViewById(R.id.btn_sortear);
 
         btnSortear.setOnClickListener(v -> viewModel.sortear());
-
-        btnFavorito.setOnClickListener(v -> {
-            viewModel.toggleFavorito();
-        });
+        btnFavorito.setOnClickListener(v -> viewModel.toggleFavorito());
     }
 
     private void loadAnimations() {
@@ -95,90 +85,113 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewModel() {
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-        // Versículo sorteado
         viewModel.getVersiculoAtual().observe(this, this::exibirVersiculo);
 
-        // Estado de loading
         viewModel.getIsLoading().observe(this, loading -> {
             btnSortear.setEnabled(!loading);
-            btnSortear.setAlpha(loading ? 0.55f : 1.0f);
+            btnSortear.setAlpha(loading ? 0.55f : 1f);
         });
 
-        // Lista de categorias → monta os chips
         viewModel.getCategorias().observe(this, this::montarChips);
     }
 
-    // ── Chips de categoria ────────────────────────────────────────────────
+    // ── Menu ──────────────────────────────────────────────────────────────
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_historico) {
+            startActivity(new Intent(this, HistoricoActivity.class));
+            return true;
+        } else if (id == R.id.action_favoritos) {
+            startActivity(new Intent(this, FavoritosActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    // ── Chips ─────────────────────────────────────────────────────────────
 
     private void montarChips(List<String> categorias) {
-        chipGroupCategorias.removeAllViews();
+        chipGroup.removeAllViews();
 
-        // Chip "Todas" — selecionado por padrão
-        Chip chipTodas = criarChip("Todas", true);
-        chipTodas.setOnCheckedChangeListener((chip, checked) -> {
-            if (checked) viewModel.setCategoriaFiltro(null);
-        });
-        chipGroupCategorias.addView(chipTodas);
+        // Cores definidas programaticamente — evita o crash do getColorStateList com theme
+        int corSelecionado   = ContextCompat.getColor(this, R.color.gold_light);
+        int corNaoSelecionado = ContextCompat.getColor(this, R.color.navy_mid);
+        int textoSelecionado  = ContextCompat.getColor(this, R.color.navy_dark);
+        int textoNaoSel       = ContextCompat.getColor(this, R.color.text_secondary);
+
+        int[][] states = new int[][]{
+            new int[]{ android.R.attr.state_checked},
+            new int[]{-android.R.attr.state_checked}
+        };
+
+        ColorStateList bgColors   = new ColorStateList(states, new int[]{corSelecionado, corNaoSelecionado});
+        ColorStateList textColors = new ColorStateList(states, new int[]{textoSelecionado, textoNaoSel});
+
+        // Chip "Todas"
+        chipGroup.addView(criarChip("Todas", true, bgColors, textColors, null));
 
         if (categorias == null) return;
-
         for (String cat : categorias) {
-            Chip chip = criarChip(cat, false);
-            chip.setOnCheckedChangeListener((c, checked) -> {
-                if (checked) viewModel.setCategoriaFiltro(cat);
-            });
-            chipGroupCategorias.addView(chip);
+            chipGroup.addView(criarChip(cat, false, bgColors, textColors, cat));
         }
     }
 
-    private Chip criarChip(String texto, boolean selecionado) {
+    private Chip criarChip(String label, boolean checked,
+                            ColorStateList bg, ColorStateList text,
+                            String categoriaFiltro) {
         Chip chip = new Chip(this);
-        chip.setText(texto);
+        chip.setText(label);
         chip.setCheckable(true);
-        chip.setChecked(selecionado);
-        chip.setChipBackgroundColorResource(R.color.chip_background_selector);
-        chip.setTextColor(getResources().getColorStateList(
-                R.color.chip_text_selector, getTheme()));
+        chip.setChecked(checked);
+        chip.setChipBackgroundColor(bg);
+        chip.setTextColor(text);
+        chip.setChipStrokeWidth(0f);
+        chip.setOnCheckedChangeListener((c, isChecked) -> {
+            if (isChecked) viewModel.setCategoriaFiltro(categoriaFiltro);
+        });
         return chip;
     }
 
-    // ── Exibição do versículo ─────────────────────────────────────────────
+    // ── Exibição ──────────────────────────────────────────────────────────
 
-    private void exibirVersiculo(Versiculo versiculo) {
-        if (versiculo == null) {
-            Toast.makeText(this,
-                getString(R.string.erro_sem_versiculo),
-                Toast.LENGTH_SHORT).show();
+    private void exibirVersiculo(Versiculo v) {
+        if (v == null) {
+            Toast.makeText(this, getString(R.string.erro_sem_versiculo), Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Animação de saída → atualiza conteúdo → animação de entrada
         animFlipOut.setAnimationListener(new Animation.AnimationListener() {
             @Override public void onAnimationStart(Animation a) {}
             @Override public void onAnimationRepeat(Animation a) {}
 
             @Override
             public void onAnimationEnd(Animation a) {
-                // Atualiza conteúdo enquanto card está "virado"
                 tvPlaceholder.setVisibility(View.GONE);
 
-                tvTexto.setText(versiculo.getTexto());
+                tvTexto.setText(v.getTexto());
                 tvTexto.setVisibility(View.VISIBLE);
 
                 viewDivider.setVisibility(View.VISIBLE);
 
-                tvReferencia.setText(versiculo.getReferencia());
+                tvReferencia.setText(v.getReferencia());
                 tvReferencia.setVisibility(View.VISIBLE);
 
-                chipCategoriaVersiculo.setText(versiculo.getCategoria());
-                chipCategoriaVersiculo.setVisibility(View.VISIBLE);
+                chipCat.setText(v.getCategoria());
+                chipCat.setVisibility(View.VISIBLE);
 
-                btnFavorito.setImageResource(versiculo.isFavorito()
+                btnFavorito.setImageResource(v.isFavorito()
                         ? R.drawable.ic_favorite_filled
                         : R.drawable.ic_favorite_border);
                 btnFavorito.setVisibility(View.VISIBLE);
 
-                // Anima entrada
                 cardVersiculo.startAnimation(animFlipIn);
             }
         });

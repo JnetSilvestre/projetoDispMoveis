@@ -14,21 +14,11 @@ import com.joaovictorsilvestre.versu.data.entity.Versiculo;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Banco de dados Room — padrão Singleton.
- * Entidades: Versiculo (1) → Historico (N).
- * Na primeira abertura, popula os 150 versículos automaticamente.
- */
-@Database(
-    entities = {Versiculo.class, Historico.class},
-    version = 1,
-    exportSchema = false
-)
+@Database(entities = {Versiculo.class, Historico.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "versu_db";
     private static volatile AppDatabase INSTANCE;
-
     public static final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public abstract VersiculoDao versiculoDao();
@@ -43,7 +33,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             AppDatabase.class,
                             DB_NAME
                     ).build();
-                    // Popula na primeira vez
+                    // Popula versículos na primeira abertura
                     executor.execute(() -> {
                         if (INSTANCE.versiculoDao().contar() == 0) {
                             INSTANCE.versiculoDao().inserirTodos(VersiculoData.getAllVersiculos());

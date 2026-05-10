@@ -13,73 +13,58 @@ import com.joaovictorsilvestre.versu.data.model.HistoricoComVersiculo;
 
 import java.util.List;
 
-/**
- * Repositório — abstrai o acesso ao banco para o ViewModel.
- * Todas as operações de escrita/leitura bloqueante rodam no executor do AppDatabase.
- */
 public class VersiculoRepository {
 
     private final VersiculoDao versiculoDao;
     private final HistoricoDao historicoDao;
 
-    public interface VersiculoCallback {
-        void onResult(Versiculo versiculo);
-    }
+    public interface VersiculoCallback { void onResult(Versiculo v); }
+    public interface CategoriaCallback  { void onResult(List<String> cats); }
 
-    public interface CategoriaCallback {
-        void onResult(List<String> categorias);
-    }
-
-    public VersiculoRepository(Application application) {
-        AppDatabase db = AppDatabase.getInstance(application);
-        versiculoDao = db.versiculoDao();
-        historicoDao = db.historicoDao();
+    public VersiculoRepository(Application app) {
+        AppDatabase db = AppDatabase.getInstance(app);
+        versiculoDao   = db.versiculoDao();
+        historicoDao   = db.historicoDao();
     }
 
     // ── Sorteio ──────────────────────────────────────────────────────────
-
-    public void sortearVersiculo(String categoria, VersiculoCallback callback) {
+    public void sortear(String categoria, VersiculoCallback cb) {
         AppDatabase.executor.execute(() -> {
             Versiculo v = (categoria == null || categoria.isEmpty())
                     ? versiculoDao.sortearAleatorio()
                     : versiculoDao.sortearPorCategoria(categoria);
-
-            if (v != null) {
+            if (v != null)
                 historicoDao.inserir(new Historico(v.getId(), System.currentTimeMillis()));
-            }
-            if (callback != null) callback.onResult(v);
+            if (cb != null) cb.onResult(v);
         });
     }
 
     // ── Categorias ────────────────────────────────────────────────────────
-
-    public void listarCategorias(CategoriaCallback callback) {
+    public void listarCategorias(CategoriaCallback cb) {
         AppDatabase.executor.execute(() -> {
-            if (callback != null) callback.onResult(versiculoDao.listarCategorias());
+            if (cb != null) cb.onResult(versiculoDao.listarCategorias());
         });
     }
 
-    // ── Favoritos ────────────────────────────────────────────────────────
-
+    // ── Favorito ─────────────────────────────────────────────────────────
     public LiveData<List<Versiculo>> getFavoritos() {
         return versiculoDao.listarFavoritos();
     }
 
-    public void toggleFavorito(Versiculo versiculo) {
+    public void setFavorito(Versiculo v, boolean favorito) {
         AppDatabase.executor.execute(() -> {
-            versiculo.setFavorito(!versiculo.isFavorito());
-            versiculoDao.atualizar(versiculo);
+            v.setFavorito(favorito);
+            versiculoDao.atualizar(v);
         });
     }
 
     // ── Histórico ─────────────────────────────────────────────────────────
-
     public LiveData<List<HistoricoComVersiculo>> getHistorico() {
         return historicoDao.listarTodos();
     }
 
-    public void deletarHistorico(Historico historico) {
-        AppDatabase.executor.execute(() -> historicoDao.deletar(historico));
+    public void deletarHistorico(Historico h) {
+        AppDatabase.executor.execute(() -> historicoDao.deletar(h));
     }
 
     public void limparHistorico() {

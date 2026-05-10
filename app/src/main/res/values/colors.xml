@@ -3,27 +3,17 @@
     <color name="navy_darkest">#0B1426</color>
     <color name="navy_dark">#0F1E3C</color>
     <color name="navy_mid">#1A2F5E</color>
-
     <color name="gold_dark">#B8860B</color>
     <color name="gold_light">#F5C842</color>
     <color name="gold_light_alpha">#33F5C842</color>
-
     <color name="bg_primary">#0D1A35</color>
     <color name="card_background">#162040</color>
-
     <color name="text_primary">#EEF2FF</color>
     <color name="text_secondary">#8899BB</color>
     <color name="text_placeholder">#4A5C80</color>
-
     <color name="white_alpha_70">#B3FFFFFF</color>
     <color name="white_alpha_40">#66FFFFFF</color>
-
-    <color name="chip_selected_bg">#F5C842</color>
-    <color name="chip_unselected_bg">#1A2F5E</color>
-    <color name="chip_selected_text">#0F1E3C</color>
-    <color name="chip_unselected_text">#8899BB</color>
-
-    <!-- Requeridas pelo sistema -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="delete_red">#CF3737</color>
 </resources>

@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/navy_darkest">
 
-    <!-- Logo -->
     <ImageView
         android:id="@+id/img_logo_splash"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:src="@drawable/ic_versu_logo"
+        android:src="@mipmap/ic_launcher"
         android:contentDescription="Logo VersU"
         app:layout_constraintBottom_toTopOf="@id/tv_app_name_splash"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +19,6 @@
         app:layout_constraintVertical_chainStyle="packed"
         android:layout_marginBottom="20dp"/>
 
-    <!-- Nome do App -->
     <TextView
         android:id="@+id/tv_app_name_splash"
         android:layout_width="wrap_content"
@@ -37,7 +35,6 @@
         app:layout_constraintTop_toBottomOf="@id/img_logo_splash"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Slogan -->
     <TextView
         android:id="@+id/tv_slogan_splash"
         android:layout_width="wrap_content"
@@ -52,9 +49,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_app_name_splash"
         app:layout_constraintVertical_bias="0.05"/>
 
-    <!-- Rodapé -->
     <TextView
-        android:id="@+id/tv_footer_splash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UTFPR — Engenharia da Computação"

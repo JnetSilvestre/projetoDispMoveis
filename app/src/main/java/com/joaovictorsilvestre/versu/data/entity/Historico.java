@@ -6,10 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-/**
- * Entidade Room que representa um registro no histórico de sorteios.
- * Relacionamento: N Historico → 1 Versiculo (FK com CASCADE DELETE)
- */
+/** Entidade Room — registro de sorteio. Relacionamento: N Historico → 1 Versiculo */
 @Entity(
     tableName = "historico",
     foreignKeys = @ForeignKey(
@@ -41,10 +38,8 @@ public class Historico {
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
-
     public int getVersiculoId() { return versiculoId; }
     public void setVersiculoId(int versiculoId) { this.versiculoId = versiculoId; }
-
     public long getDataSorteio() { return dataSorteio; }
     public void setDataSorteio(long dataSorteio) { this.dataSorteio = dataSorteio; }
 }

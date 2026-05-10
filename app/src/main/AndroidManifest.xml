@@ -9,6 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VersU">
 
+        <!-- LAUNCHER: Splash -->
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
@@ -19,10 +20,25 @@
             </intent-filter>
         </activity>
 
+        <!-- Main -->
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <!-- Histórico -->
+        <activity
+            android:name=".ui.historico.HistoricoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.main.MainActivity" />
+
+        <!-- Favoritos -->
+        <activity
+            android:name=".ui.favoritos.FavoritosActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.main.MainActivity" />
 
     </application>
 

@@ -26,9 +26,9 @@ data/
 
 ui/
 ├── SplashActivity.java
-└── main/
-    ├── MainActivity.java
-    └── MainViewModel.java
+├── main/        → MainActivity.java  |  MainViewModel.java
+├── historico/   → HistoricoActivity.java  |  HistoricoViewModel.java  |  HistoricoAdapter.java
+└── favoritos/   → FavoritosActivity.java  |  FavoritosViewModel.java  |  FavoritosAdapter.java
 ```
 
 ### Relacionamento entre entidades
@@ -36,48 +36,54 @@ ui/
 Versiculo (1) ──── (N) Historico
   id (PK)               id (PK autoGenerate)
   texto                 versiculo_id (FK → CASCADE DELETE)
-  referencia            data_sorteio (timestamp)
+  referencia            data_sorteio (timestamp Unix ms)
   categoria
-  favorito
+  favorito (boolean)
 ```
 
 ---
 
 ## 🛠️ Tecnologias
 
-| Tecnologia | Versão | Uso |
-|---|---|---|
-| Java | 17 | Linguagem principal |
-| Android Studio | Hedgehog+ | IDE |
-| Room (SQLite) | 2.6.1 | Persistência local |
-| LiveData + ViewModel | 2.7.0 | Arquitetura MVVM |
-| Material Design 3 | 1.11.0 | Componentes visuais |
-| minSdk | 26 (Android 8.0) | Compatibilidade |
+| Tecnologia        | Versão  | Uso                      |
+|-------------------|---------|--------------------------|
+| Java              | 17      | Linguagem principal      |
+| Android Studio    | Hedgehog+ | IDE                    |
+| Room (SQLite)     | 2.6.1   | Persistência local       |
+| LiveData+ViewModel| 2.7.0   | Arquitetura MVVM         |
+| Material Design 3 | 1.11.0  | Componentes visuais      |
+| minSdk            | 26      | Android 8.0+             |
 
 ---
 
 ## 🚀 Como executar
 
 ```bash
-# 1. Clone o repositório
 git clone https://github.com/JnetSilvestre/projetoDispMoveis.git
-
-# 2. Abra no Android Studio
-# File > Open > selecione a pasta VersU
-
-# 3. Aguarde o Gradle sincronizar (~2 min na primeira vez)
-
-# 4. Run > Run 'app'  (ou Shift+F10)
+# Abra a pasta VersU no Android Studio
+# File > Open > VersU
+# Aguarde o Gradle sincronizar (~2 min)
+# Shift+F10 para rodar
 ```
 
 ---
 
-## 📋 Status das entregas
+## 📋 Status das Entregas
 
-| # | Descrição | Status |
-|---|---|---|
-| 1 | Proposta de Projeto (documento) | ✅ |
-| 2 | Banco Room + Tela principal + Sorteio MVP | ✅ |
-| 3 | Histórico + Navegação + Favoritos | 🔄 |
-| 4 | Dark Mode + Compartilhamento + Polimento | ⏳ |
-| Final | Testes + Documentação + APK | ⏳ |
+| # | Descrição                              | Status |
+|---|----------------------------------------|--------|
+| 1 | Proposta de Projeto (documento)        | ✅     |
+| 2 | Banco Room + Tela principal + Sorteio  | ✅     |
+| 3 | Histórico + Favoritos + Navegação      | ✅     |
+| 4 | Dark Mode + Compartilhamento + Testes  | 🔄     |
+| Final | APK + Documentação final          | ⏳     |
+
+---
+
+## 🐛 Correções aplicadas na Entrega 3
+
+- **Crash após splash corrigido**: `ColorStateList` dos Chips criado programaticamente com `ContextCompat` (eliminado crash de `getColorStateList` com tema)
+- **Bug `toggleFavorito` corrigido**: estado invertido uma única vez no ViewModel antes de persistir
+- **Gradle Wrapper incluído**: `gradle-wrapper.properties` presente para build funcional
+- **Ícones adaptive**: `mipmap-anydpi-v26` com foreground vetorial — sem necessidade de PNGs
+- **Splash**: referência de logo usa `@mipmap/ic_launcher` — sempre disponível
