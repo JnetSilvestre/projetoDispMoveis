@@ -19,29 +19,24 @@
         android:strokeWidth="2.5"
         android:pathData="M90,38 L90,76 Q90,80 86,80 L56,80 L56,32 Q56,28 60,28 L86,28 Q90,28 90,32 Z"/>
 
-    <!-- Lombada central dourada -->
-    <rect
-        android:x="51"
-        android:y="26"
-        android:width="6"
-        android:height="55"
-        android:fillColor="#F5C842"/>
+    <!-- Lombada central dourada (was rect) -->
+    <path
+        android:fillColor="#F5C842"
+        android:pathData="M51,26 h6 v55 h-6 z"/>
 
-    <!-- Linhas de texto - esquerda -->
-    <line android:x1="25" android:y1="43" android:x2="46" android:y2="43"
-        android:strokeColor="#8899BB" android:strokeWidth="2" android:strokeLineCap="round"/>
-    <line android:x1="25" android:y1="51" android:x2="46" android:y2="51"
-        android:strokeColor="#8899BB" android:strokeWidth="2" android:strokeLineCap="round"/>
-    <line android:x1="25" android:y1="59" android:x2="38" android:y2="59"
-        android:strokeColor="#8899BB" android:strokeWidth="2" android:strokeLineCap="round"/>
+    <!-- Linhas de texto - esquerda (were line) -->
+    <path
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M25,43 L46,43 M25,51 L46,51 M25,59 L38,59"/>
 
-    <!-- Linhas de texto - direita -->
-    <line android:x1="62" android:y1="43" android:x2="83" android:y2="43"
-        android:strokeColor="#8899BB" android:strokeWidth="2" android:strokeLineCap="round"/>
-    <line android:x1="62" android:y1="51" android:x2="83" android:y2="51"
-        android:strokeColor="#8899BB" android:strokeWidth="2" android:strokeLineCap="round"/>
-    <line android:x1="62" android:y1="59" android:x2="75" android:y2="59"
-        android:strokeColor="#8899BB" android:strokeWidth="2" android:strokeLineCap="round"/>
+    <!-- Linhas de texto - direita (were line) -->
+    <path
+        android:strokeColor="#8899BB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M62,43 L83,43 M62,51 L83,51 M62,59 L75,59"/>
 
     <!-- Estrela dourada acima do livro -->
     <path

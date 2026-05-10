@@ -16,4 +16,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="delete_red">#CF3737</color>
+
+    <!-- Chips -->
+    <color name="chip_selected_bg">@color/gold_light</color>
+    <color name="chip_unselected_bg">@color/navy_mid</color>
+    <color name="chip_selected_text">@color/navy_dark</color>
+    <color name="chip_unselected_text">@color/text_secondary</color>
 </resources>

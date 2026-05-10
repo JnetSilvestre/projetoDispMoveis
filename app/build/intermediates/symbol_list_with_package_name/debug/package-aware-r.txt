@@ -1383,6 +1383,7 @@ color chip_selected_text
 color chip_text_selector
 color chip_unselected_bg
 color chip_unselected_text
+color delete_red
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -3167,7 +3168,10 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_favoritos
+id action_historico
 id action_image
+id action_limpar_historico
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -3205,7 +3209,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_fav_remover
 id btn_favorito
+id btn_hist_delete
 id btn_sortear
 id buttonPanel
 id cache_measures
@@ -3481,6 +3487,8 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_favoritos
+id rv_historico
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3578,6 +3586,8 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbar_favoritos
+id toolbar_historico
 id top
 id topPanel
 id touch_outside
@@ -3590,9 +3600,15 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tv_app_name_splash
-id tv_contador
-id tv_footer_splash
-id tv_instrucao
+id tv_fav_categoria
+id tv_fav_referencia
+id tv_fav_texto
+id tv_favoritos_vazio
+id tv_hist_categoria
+id tv_hist_data
+id tv_hist_referencia
+id tv_hist_texto
+id tv_historico_vazio
 id tv_placeholder
 id tv_referencia
 id tv_slogan_splash
@@ -3735,6 +3751,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_favoritos
+layout activity_historico
 layout activity_main
 layout activity_splash
 layout custom_dialog
@@ -3755,6 +3773,8 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_favorito
+layout item_historico
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3816,6 +3836,8 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu_historico
+menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -3846,6 +3868,9 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_favoritos
+string action_historico
+string action_limpar
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -3863,12 +3888,10 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
-string categoria_label
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
-string desfavoritar
 string erro_sem_versiculo
 string error_a11y_label
 string error_icon_content_description
@@ -3876,7 +3899,9 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string favoritar
+string favoritos_vazio
 string hide_bottom_view_on_scroll_behavior
+string historico_vazio
 string icon_content_description
 string item_view_role_description
 string m3_exceed_max_badge_text_suffix
@@ -3984,7 +4009,6 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
-string placeholder_texto
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -3993,7 +4017,6 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string slogan
 string status_bar_notification_info_overflow
-string todas_categorias
 string versiculos_count
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
