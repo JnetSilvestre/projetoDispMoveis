@@ -16,12 +16,16 @@
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\slide_up.xml"
     },
     {
+        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_btn_pulse.xml.flat",
+        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\btn_pulse.xml"
+    },
+    {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\menu_menu_main.xml.flat",
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\menu\\menu_main.xml"
     },
     {
-        "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_btn_pulse.xml.flat",
-        "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\btn_pulse.xml"
+        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/drawable_ic_iasd_logo.xml.flat",
+        "source": "com.joaovictorsilvestre.versu.app-main-38:/drawable/ic_iasd_logo.xml"
     },
     {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_fade_out.xml.flat",
@@ -44,6 +48,10 @@
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\layout\\item_historico.xml"
     },
     {
+        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/drawable_ic_reading.xml.flat",
+        "source": "com.joaovictorsilvestre.versu.app-main-38:/drawable/ic_reading.xml"
+    },
+    {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\layout\\activity_main.xml"
     },
@@ -60,16 +68,16 @@
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\card_flip_in.xml"
     },
     {
+        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/layout_activity_main.xml.flat",
+        "source": "com.joaovictorsilvestre.versu.app-main-38:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\menu_menu_historico.xml.flat",
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\menu\\menu_historico.xml"
     },
     {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\color_chip_background_selector.xml.flat",
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\color\\chip_background_selector.xml"
-    },
-    {
-        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.joaovictorsilvestre.versu.app-main-38:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\layout_activity_historico.xml.flat",
@@ -86,6 +94,10 @@
     {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\anim_card_flip_out.xml.flat",
         "source": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-main-38:\\anim\\card_flip_out.xml"
+    },
+    {
+        "merged": "com.joaovictorsilvestre.versu.app-merged_res-36:/layout_activity_splash.xml.flat",
+        "source": "com.joaovictorsilvestre.versu.app-main-38:/layout/activity_splash.xml"
     },
     {
         "merged": "C:\\Users\\João Victor\\.gradle\\daemon\\8.4\\com.joaovictorsilvestre.versu.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",

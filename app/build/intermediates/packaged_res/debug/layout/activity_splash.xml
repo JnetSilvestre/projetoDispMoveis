@@ -8,16 +8,16 @@
 
     <ImageView
         android:id="@+id/img_logo_splash"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/ic_versu_logo"
         android:contentDescription="Logo VersU"
         app:layout_constraintBottom_toTopOf="@id/tv_app_name_splash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/tv_app_name_splash"
@@ -49,15 +49,15 @@
         app:layout_constraintTop_toBottomOf="@id/tv_app_name_splash"
         app:layout_constraintVertical_bias="0.05"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UTFPR — Engenharia da Computação"
-        android:textSize="11sp"
-        android:textColor="@color/white_alpha_40"
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_iasd_logo"
+        android:alpha="0.25"
+        android:contentDescription="@string/desc_simbolo_igreja"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="28dp"/>
+        android:layout_marginBottom="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

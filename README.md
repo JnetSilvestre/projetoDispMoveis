@@ -1,89 +1,50 @@
-# VersU 📖✨
-**Sua caixinha de promessas bíblicas digital**
+# VersU 
 
-> Projeto acadêmico — Programação para Dispositivos Móveis  
-> Engenharia da Computação — UTFPR Câmpus Cornélio Procópio  
-> Aluno: João Victor da Cruz Silvestre | RA: 2144263
+**Sua caixinha de promessas bíblicas digital.**
 
----
-
-## 📱 Sobre o App
-
-O **VersU** digitaliza a experiência da "caixinha de promessas bíblicas".  
-Funciona **100% offline** — sorteio aleatório, filtro por categoria, favoritos e histórico persistente.
+O **VersU** é um aplicativo Android desenvolvido para oferecer uma experiência simples e inspiradora de leitura de promessas bíblicas. Funciona de forma totalmente offline, permitindo que você retire uma promessa a qualquer momento, filtre por categorias, gerencie seus favoritos e consulte o histórico de versículos sorteados.
 
 ---
 
-## 🏗️ Arquitetura — MVVM
+##  Funcionalidades
 
-```
-data/
-├── entity/      → Versiculo.java  |  Historico.java
-├── dao/         → VersiculoDao.java  |  HistoricoDao.java
-├── database/    → AppDatabase.java  |  VersiculoData.java (150 versículos)
-├── model/       → HistoricoComVersiculo.java
-└── repository/  → VersiculoRepository.java
-
-ui/
-├── SplashActivity.java
-├── main/        → MainActivity.java  |  MainViewModel.java
-├── historico/   → HistoricoActivity.java  |  HistoricoViewModel.java  |  HistoricoAdapter.java
-└── favoritos/   → FavoritosActivity.java  |  FavoritosViewModel.java  |  FavoritosAdapter.java
-```
-
-### Relacionamento entre entidades
-```
-Versiculo (1) ──── (N) Historico
-  id (PK)               id (PK autoGenerate)
-  texto                 versiculo_id (FK → CASCADE DELETE)
-  referencia            data_sorteio (timestamp Unix ms)
-  categoria
-  favorito (boolean)
-```
+- **Sorteio Inteligente:** Receba uma promessa aleatória ou filtrada por categoria. Simulando a experiência do pôr do sol da igreja adventista.
+- **Categorias:** Filtre mensagens de Amor, Esperança, Força, Sabedoria e muito mais.
+- **Favoritos:** Salve os versículos que mais falaram ao seu coração.
+- **Histórico:** Veja as promessas que você já retirou.
+- **Offline:** Todo o conteúdo está disponível sem necessidade de internet.
 
 ---
 
-## 🛠️ Tecnologias
+##  Tecnologias e Arquitetura
 
-| Tecnologia        | Versão  | Uso                      |
-|-------------------|---------|--------------------------|
-| Java              | 17      | Linguagem principal      |
-| Android Studio    | Hedgehog+ | IDE                    |
-| Room (SQLite)     | 2.6.1   | Persistência local       |
-| LiveData+ViewModel| 2.7.0   | Arquitetura MVVM         |
-| Material Design 3 | 1.11.0  | Componentes visuais      |
-| minSdk            | 26      | Android 8.0+             |
+O projeto utiliza as melhores práticas de desenvolvimento Android moderno e exigidos pela professora:
 
----
-
-## 🚀 Como executar
-
-```bash
-git clone https://github.com/JnetSilvestre/projetoDispMoveis.git
-# Abra a pasta VersU no Android Studio
-# File > Open > VersU
-# Aguarde o Gradle sincronizar (~2 min)
-# Shift+F10 para rodar
-```
+- **Linguagem:** Java 17
+- **Arquitetura:** MVVM (Model-View-ViewModel)
+- **Banco de Dados:** Room (SQLite) para persistência local.
+- **UI:** Material Design 3 com componentes modernos.
+- **Jetpack:** ViewModel, LiveData e View Binding.
 
 ---
 
-## 📋 Status das Entregas
+## Guia de Organização
 
-| # | Descrição                              | Status |
-|---|----------------------------------------|--------|
-| 1 | Proposta de Projeto (documento)        | ✅     |
-| 2 | Banco Room + Tela principal + Sorteio  | ✅     |
-| 3 | Histórico + Favoritos + Navegação      | ✅     |
-| 4 | Dark Mode + Compartilhamento + Testes  | 🔄     |
-| Final | APK + Documentação final          | ⏳     |
+Para facilitar a navegação no código, o projeto está dividido em:
+
+- `data/`: Contém a lógica de dados, banco de dados (Room) e repositórios.
+- `ui/`: Contém as telas (Activities), ViewModels e Adapters.
+- `res/`: Recursos visuais, layouts, ícones e strings.
 
 ---
 
-## 🐛 Correções aplicadas na Entrega 3
+##  Como Executar
 
-- **Crash após splash corrigido**: `ColorStateList` dos Chips criado programaticamente com `ContextCompat` (eliminado crash de `getColorStateList` com tema)
-- **Bug `toggleFavorito` corrigido**: estado invertido uma única vez no ViewModel antes de persistir
-- **Gradle Wrapper incluído**: `gradle-wrapper.properties` presente para build funcional
-- **Ícones adaptive**: `mipmap-anydpi-v26` com foreground vetorial — sem necessidade de PNGs
-- **Splash**: referência de logo usa `@mipmap/ic_launcher` — sempre disponível
+1. Clone o repositório.
+2. Abra o projeto no **Android Studio**.
+3. Aguarde a sincronização do Gradle.
+4. Execute no seu dispositivo ou emulador ou gere um APK (Shift + F10).
+
+---
+*Projeto avaliativo Disp. Móveis — Engenharia da Computação*
+*Aluno: João Victor da Cruz Silvestre | RA: 2144263*

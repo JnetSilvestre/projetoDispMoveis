@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">VersU</string>
     <string name="slogan">Sua caixinha de promessas digital</string>
-    <string name="btn_sortear">✦  Sortear Versículo</string>
+    <string name="btn_sortear">Retire sua promessa</string>
     <string name="favoritar">Favoritar</string>
     <string name="versiculos_count">150 versículos disponíveis</string>
     <string name="erro_sem_versiculo">Nenhum versículo encontrado nesta categoria.</string>
@@ -11,4 +11,6 @@
     <string name="action_historico">Histórico</string>
     <string name="action_favoritos">Favoritos</string>
     <string name="action_limpar">Limpar tudo</string>
+    <string name="desc_simbolo_igreja">Símbolo da Igreja</string>
+    <string name="desc_icone_leitura">Ícone Leitura</string>
 </resources>

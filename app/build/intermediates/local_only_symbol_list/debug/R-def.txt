@@ -30,8 +30,10 @@ color white_alpha_40
 color white_alpha_70
 drawable ic_favorite_border
 drawable ic_favorite_filled
+drawable ic_iasd_logo
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_reading
 drawable ic_versu_logo
 id action_favoritos
 id action_historico
@@ -80,6 +82,8 @@ string action_historico
 string action_limpar
 string app_name
 string btn_sortear
+string desc_icone_leitura
+string desc_simbolo_igreja
 string erro_sem_versiculo
 string favoritar
 string favoritos_vazio
